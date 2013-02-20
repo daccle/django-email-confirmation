@@ -43,7 +43,7 @@ class EmailAddressManager(models.Manager):
 
 class EmailAddress(models.Model):
 
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, related_name='+') #TODO: not sure about the related name here
     email = models.EmailField()
     verified = models.BooleanField(default=False)
     primary = models.BooleanField(default=False)
